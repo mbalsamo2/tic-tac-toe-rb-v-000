@@ -67,4 +67,3 @@ def current_player(board)
        "O"
   end
 end
-
