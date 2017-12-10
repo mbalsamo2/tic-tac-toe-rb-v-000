@@ -20,13 +20,13 @@ def display_board(board)
 end
 
 # converts players input to actual index on board
-def input_to_index(input)
-  input.to_i - 1
+def input_to_index(string)
+  string.to_i - 1
 end
 
 # makes the move
-def move(board, index, current_player)
-  board[index] = current_player
+def move(board, index, token)
+  board[index] = token
 end
 
 # checks if index is taken or not
@@ -45,7 +45,7 @@ def turn(board)
   input = gets.strip
   index = input_to_index(input)
   if valid_move?(board, index)
-    move(board, index)
+    move(board, index, current_player(board))
     display_board(board)
   else
     turn(board)
@@ -105,16 +105,13 @@ end
 
 # plays/loops through game 9 times
 def play(board)
-turn = 0
-  until turn == 9
-    turn(board)
-    turn += 1
-    if over?(board) == true
-      if won?(board) == true
-        "Congratulations #{winner(board)}!"
-      else  draw?(board) == true
-        "Cat's Game!"
-      end
-    end
-  end
+ while !over?(board)
+   turn(board)
+ end
+ if won?(board)
+   "Congratulations #{winner(board)}!"
+ else  draw?(board)
+   "Cat's Game!"
+ end
 end
+ 
