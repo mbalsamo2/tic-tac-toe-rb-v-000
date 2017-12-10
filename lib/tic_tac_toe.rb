@@ -109,4 +109,3 @@ turn = 0
     turn += 1
   end
 end
-
