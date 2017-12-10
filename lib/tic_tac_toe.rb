@@ -20,8 +20,8 @@ def display_board(board)
 end
 
 # converts players input to actual index on board
-def input_to_index(string)
-  string.to_i - 1
+def input_to_index(input)
+  input.to_i - 1
 end
 
 # makes the move
