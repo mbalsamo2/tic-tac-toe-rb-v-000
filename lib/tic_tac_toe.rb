@@ -24,6 +24,7 @@ def input_to_index(user_input)
   user_input.to_i - 1
 end
 
+# makes the move
 def move(board, index, current_player)
   board[index] = current_player
 end
@@ -108,5 +109,10 @@ turn = 0
   until turn == 9
     turn(board)
     turn += 1
+  end
+  if won?(board) == true
+    "Congratulations #{winner(board)}!"
+  else  draw?(board) == true
+    "Cat's Game!"
   end
 end
