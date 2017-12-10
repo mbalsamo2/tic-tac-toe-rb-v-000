@@ -109,10 +109,12 @@ turn = 0
   until turn == 9
     turn(board)
     turn += 1
-    if won?(board) == true
-      "Congratulations #{winner(board)}!"
-    else  draw?(board) == true
-      "Cat's Game!"
+    if over?(board) == true
+      if won?(board) == true
+        "Congratulations #{winner(board)}!"
+      else  draw?(board) == true
+        "Cat's Game!"
+      end
     end
   end
 end
