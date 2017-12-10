@@ -20,7 +20,7 @@ def display_board(board)
 end
 
 # converts players input to actual index on board
-def input_to_index(user_input)
+def input_to_index(input)
   user_input.to_i - 1
 end
 
